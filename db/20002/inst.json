@@ -1,0 +1,71 @@
+{
+  "schoolId": 20002,
+  "schoolName": "QATWO",
+  "institutionInfo": {
+    "schoolName": "QATWO",
+    "ldapDomain": "",
+    "schoolId": 20002,
+    "useLdapAuthentication": false,
+    "ldapAuthStudents": false,
+    "idDisplayNameWeb": "",
+    "chp": "QATWO",
+    "samlURL": "",
+    "samlurl": ""
+  },
+  "school": {
+    "id": 20002,
+    "name": "QATWO",
+    "type": "STUDENT",
+    "createdDate": "2015-09-29T22:50:00.000",
+    "portalSettings": {
+      "studentIdLabel": "",
+      "studentIdTooltip": "",
+      "studentIdFormat": "",
+      "userIdLabel": ""
+    },
+    "softestSettings": {
+      "studentIdLabel": "Exam Num.",
+      "studentIdFormat": "",
+      "identityAutoFillMode": "STUDENT_ANONYMOUS_ID",
+      "allowStudentEnteredId": true,
+      "showStudentName": true,
+      "expirationDate": "2019-12-31T05:00:00.000",
+      "allowAlternateLanguages": false,
+      "allowDownloadPassword": true,
+      "allowUpdates": false,
+      "enableProset": false,
+      "forceDownload": false,
+      "forceDownloadShowPrompt": true,
+      "labStoragePath": "",
+      "overrideServicePipeTimeout": false,
+      "requireExamCode": false,
+      "resumeCodeTimeThreshold": 1,
+      "showElapsedTime": true,
+      "showExamPassword": true,
+      "useExamTemplates": false,
+      "useRouteExe": true
+    },
+    "schoolLdapSettings": {
+      "enabled": false,
+      "domain": null,
+      "authStudents": false,
+      "authUsers": false
+    },
+    "schoolTextSettings": {
+      "homePage": "June Second",
+      "requireStudentDisclaimerAgreement": true,
+      "disclaimer": "June Second"
+    },
+    "sofestExpirationdate": "2019-12-31T05:00:00.000",
+    "timeZone": "-05:00",
+    "softestExpirationDate": "2019-12-31T05:00:00.000",
+    "code": "QATWO"
+  },
+  "examTakers": [
+    {
+      "studentId": "sjames",
+      "password": "password",
+      "userId": 17882
+    }
+  ]
+}

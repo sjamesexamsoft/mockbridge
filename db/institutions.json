@@ -1,0 +1,46 @@
+{
+  "schools": [
+    {
+      "id": 20002,
+      "name": "QATWO - Dev",
+      "type": "STUDENT",
+      "customHomePage": "QATWO",
+      "timeZone": "-05:00",
+      "createdDate": "2015-09-29T22:50:00.000",
+      "softestExpirationDate": "2019-12-31T05:00:00.000",
+      "settings": {
+        "platform": {
+          "windows": true,
+          "ipad": true
+        },
+        "ldap": {
+          "enabled": false,
+          "domain": null,
+          "authStudents": null,
+          "authUsers": null
+        },
+        "saml": {
+          "enabled": false,
+          "loginUrl": null
+        }
+      },
+      "baseUrl": "http://localhost:8080",
+      "portal": "legacy",
+      "env": "orange",
+      "pwResetUrl": "https://www-aws.examsoft.com/ui/examtaker/etgetpwd.aspx",
+      "code": "QATWO"
+    }
+  ],
+  "institutions_by_name": [
+    {
+      "schoolName": "QATWO",
+      "fileName": "db/20002/inst.json"
+    }
+  ],
+  "institutions_by_id": [
+    {
+      "id": "20002",
+      "fileName": "db/20002/inst.json"
+    }
+  ]
+}
