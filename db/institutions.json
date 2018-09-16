@@ -24,23 +24,80 @@
           "loginUrl": null
         }
       },
-      "baseUrl": "http://localhost:8080",
+      "baseUrl": "http://localhost:9090",
       "portal": "legacy",
       "env": "orange",
       "pwResetUrl": "https://www-aws.examsoft.com/ui/examtaker/etgetpwd.aspx",
       "code": "QATWO"
+    },
+    {
+      "id": 20013,
+      "name": "[PLACEHOLDER]",
+      "type": "STUDENT",
+      "createdDate": "2016-09-02T19:56:00.000",
+      "portalSettings": {
+        "studentIdLabel": null,
+        "studentIdTooltip": null,
+        "studentIdFormat": null,
+        "userIdLabel": null
+      },
+      "softestSettings": {
+        "studentIdLabel": null,
+        "studentIdFormat": null,
+        "identityAutoFillMode": null,
+        "allowStudentEnteredId": true,
+        "showStudentName": true,
+        "expirationDate": null,
+        "allowAlternateLanguages": false,
+        "allowDownloadPassword": true,
+        "allowUpdates": false,
+        "enableProset": false,
+        "forceDownload": false,
+        "forceDownloadShowPrompt": true,
+        "labStoragePath": null,
+        "overrideServicePipeTimeout": false,
+        "requireExamCode": false,
+        "resumeCodeTimeThreshold": 0,
+        "showElapsedTime": true,
+        "showExamPassword": true,
+        "useExamTemplates": false,
+        "useRouteExe": true
+      },
+      "schoolLdapSettings": {
+        "enabled": false,
+        "domain": null,
+        "authStudents": false,
+        "authUsers": false
+      },
+      "schoolTextSettings": {
+        "homePage": null,
+        "requireStudentDisclaimerAgreement": false,
+        "disclaimer": null
+      },
+      "sofestExpirationdate": null,
+      "timeZone": null,
+      "softestExpirationDate": null,
+      "code": "flashlight"
     }
   ],
   "institutions_by_name": [
     {
       "schoolName": "QATWO",
       "fileName": "db/20002/inst.json"
+    },
+    {
+      "schoolName": "flashlight",
+      "fileName": ""
     }
   ],
   "institutions_by_id": [
     {
       "id": "20002",
       "fileName": "db/20002/inst.json"
+    },
+    {
+      "id": "20013",
+      "fileName": ""
     }
   ]
 }

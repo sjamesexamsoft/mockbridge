@@ -18,7 +18,7 @@ function getInstitutions() {
 function getInstitutionData(prop, filter) {
   return new Promise((resolve, reject) => {
     const inst = institutions[prop].filter(filter)[0];
-    console.log(`getInstitutionData: ${prop} ${JSON.stringify(inst)}`);
+    // console.log(`getInstitutionData: ${prop} ${JSON.stringify(inst)}`);
     if (inst && inst.fileName) {
       const p = path.join(__dirname, inst.fileName);
       try {
@@ -194,6 +194,7 @@ function getExams(authToken) {
         `${userId}`,
         'exams.json'
       );
+
       fs.readFile(p, 'utf8', (err, data) => {
         if (err) {
           reject({ status: 404, message: err });
@@ -207,12 +208,89 @@ function getExams(authToken) {
   });
 }
 
+function getExamManifest(authToken, examId) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const { userId, schoolId } = await decodeAuthToken(authToken);
+      const p = path.join(
+        __dirname,
+        'db',
+        `${schoolId}`,
+        `${userId}`,
+        'exams',
+        `${examId}.manifest`
+      );
+      // console.log(`exam manifest: ${p}`);
+      fs.readFile(p, 'utf8', (err, data) => {
+        if (err) {
+          reject({ status: 404, message: err });
+        } else {
+          const manifest = JSON.parse(data);
+          manifest.examDownloadURL = path.join(
+            'db',
+            `${schoolId}`,
+            `${userId}`,
+            'exams',
+            `${examId}.zip`
+          );
+          resolve(manifest);
+        }
+      });
+    } catch (e) {
+      reject({ status: 400, message: e.message });
+    }
+  });
+}
+
+function readExamFile(schoolId, userId, examfile, range) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const p = path.join(
+        __dirname,
+        'db',
+        `${schoolId}`,
+        `${userId}`,
+        'exams',
+        `${examfile}`
+      );
+      console.log(`examfile: ${p}`);
+      fs.readFile(p, (err, data) => {
+        if (err) {
+          reject({ status: 404, message: e.message });
+        } else {
+          resolve(data);
+        }
+      });
+      // fs.open(p, (err, fd) => {
+      //   if (err) {
+      //     reject({ status: 404, message: err });
+      //   } else {
+      //     let data = Buffer.alloc(1024);
+      //     fs.read(fd, data, 0, 1024, range[0], (err, data) => {
+      //       if (err) {
+      //         reject({ status: 500, message: err });
+      //       } else {
+      //         resolve(data);
+      //       }
+      //     });
+      //   }
+      // });
+    } catch (e) {
+      reject({ status: 400, message: e.message });
+    }
+  });
+}
+
+function readFile(fd, offset, size) {
+  return new Promise((resolve, reject) => {});
+}
+
 function decodeAuthToken(authToken) {
   return new Promise(async (resolve, reject) => {
     try {
       const result = await jose.JWE.createDecrypt(key).decrypt(authToken);
       json = result.plaintext.toString('ascii');
-      console.log(json);
+      // console.log(json);
       resolve(JSON.parse(json));
     } catch (e) {
       reject({ message: 'invalid authorization' });
@@ -226,5 +304,7 @@ module.exports = {
   getSchool,
   loginExamTaker,
   getExamTakerDetails,
-  getExams
+  getExams,
+  getExamManifest,
+  readExamFile
 };
