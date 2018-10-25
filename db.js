@@ -5,7 +5,7 @@ const jose = require('node-jose');
 const institutions = JSON.parse(
   fs.readFileSync('db/institutions.json', 'utf8')
 );
-const keyBuff = Buffer.from('F7EDC83E48EBD3D74A071363FF47650F', 'hex');
+const keyBuff = Buffer.from(process.env.KEY_BUFFER, 'hex');
 
 // assumption is that this async operation will complete long before any messages received
 let key;
