@@ -30,5 +30,7 @@
     "showExamPassword": true,
     "useExamTemplates": false,
     "useRouteExe": true
-  }
+  },
+  "modernUIOptIn": true,
+  "uiThemeSwitchEnabled": false
 }

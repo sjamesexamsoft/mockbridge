@@ -158,6 +158,9 @@ app.post('/api/draft/exams/getAvailableExams', async (req, res) => {
 });
 
 app.post('/api/draft/examtaker/examtakerDetails', async (req, res) => {
+  // res.status(404);
+  // res.json({ success: false, error: 'test failure' });
+  // return;
   try {
     const details = await getExamTakerDetails(
       req.headers.authorization.split(' ')[1]
@@ -205,6 +208,6 @@ app.use(function(err, req, res, next) {
   res.status(500).send('Something broke!');
 });
 
-app.listen(9090, () => {
-  console.log('listening on 9090');
+app.listen(process.env.PORT || 9090, () => {
+  console.log(`listening on ${process.env.PORT || 9090}`);
 });

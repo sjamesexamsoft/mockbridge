@@ -2,6 +2,9 @@
   "name": "mockbridge",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/es6-promise": "^3.3.0",
